@@ -1,9 +1,14 @@
 from django.db import models
 
-# Create your models here.
-class Task(models.Model):
-    title = models.CharField(max_length=100)
-    completed = models.BooleanField(default=False)
-
+class Gorev(models.Model):
+    baslik = models.CharField(max_length=200)
+    tamamlandi = models.BooleanField(default=False)
+    olusturulma_tarihi = models.DateTimeField(auto_now_add=True)
+    
     def __str__(self):
-        return self.title
+        return self.baslik
+    
+    class Meta:
+        verbose_name = "Görev"
+        verbose_name_plural = "Görevler"
+        ordering = ['-olusturulma_tarihi']

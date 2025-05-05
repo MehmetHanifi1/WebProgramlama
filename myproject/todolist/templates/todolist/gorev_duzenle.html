@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1 class="mb-4">Görev Düzenle</h1>
+    
+    <form method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="baslik" class="form-label">Görev Başlığı</label>
+            <input type="text" name="baslik" id="baslik" class="form-control" value="{{ gorev.baslik }}" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Kaydet</button>
+        <a href="{% url 'gorev_listesi' %}" class="btn btn-secondary">İptal</a>
+    </form>
+</div>
+{% endblock %}
