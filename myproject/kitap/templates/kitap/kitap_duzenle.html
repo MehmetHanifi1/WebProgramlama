@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kitap Düzenle</title>
+</head>
+<body>
+    <h1>Kitap Düzenle</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Güncelle</button>
+    </form>
+</body>
+</html>

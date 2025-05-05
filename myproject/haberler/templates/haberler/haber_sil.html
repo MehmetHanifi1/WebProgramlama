@@ -1,0 +1,16 @@
+
+<h1>Haber Sil</h1>
+
+<p>Bu haberin silinmesini onaylıyor musunuz?</p>
+
+<form method="POST">
+    {% csrf_token %}
+    
+    <h2>{{ haber.baslik }}</h2>
+    <p>{{ haber.icerik }}</p>
+
+    <input type="hidden" name="haber_id" value="{{ haber.id }}">
+
+    <button type="submit" class="sil-butonu">Evet, Sil</button>
+</form>
+

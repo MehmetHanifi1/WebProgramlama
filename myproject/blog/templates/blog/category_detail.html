@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ category.name }} Kategorisi</title>
+</head>
+<body>
+    <h1>{{ category.name }} Kategorisi</h1>
+    <ul>
+        {% for post in posts %}
+            <li><a href="{% url 'blog:post_detail' post.id %}">{{ post.title }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'blog:category_list' %}">Geri</a>
+</body>
+</html>

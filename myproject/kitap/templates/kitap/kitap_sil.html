@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kitap Sil</title>
+</head>
+<body>
+    <h1>Kitap Sil</h1>
+    <p>Kitap: {{ kitap.kitle }} - {{ kitap.sayfa_sayisi }} sayfa</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Sil</button>
+    </form>
+</body>
+</html>

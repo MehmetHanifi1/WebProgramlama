@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haberler</title>
+</head>
+<body>
+    <h1>Haberler</h1>
+    
+    <div>
+        {% for haber in haberler %}
+            <div>
+                <h2><a href="{% url 'haber_detay' haber.id %}">{{ haber.baslik }}</a></h2>
+                <!-- <p><strong>Yazar:</strong> {{ haber.yazar }}</p>
+                <p>{{ haber.icerik|truncatewords:50 }}</p>-->
+                <hr>
+            </div>
+        {% empty %}
+            <p>Henüz haber bulunmamaktadır.</p>
+        {% endfor %}
+    </div>
+
+</body>
+</html>

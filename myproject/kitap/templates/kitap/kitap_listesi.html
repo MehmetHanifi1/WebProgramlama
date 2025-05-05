@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kitap Listesi</title>
+</head>
+<body>
+    <h1>Kitap Listesi</h1>
+    
+ 
+    <a href="{% url 'kitap_ekle' %}">Yeni Kitap Ekle</a>
+
+  
+    <form method="get">
+        {{ form.as_p }}  
+        <button type="submit">Filtrele</button>
+    </form>
+
+    <h2>Kitaplar</h2>
+    <ul>
+        {% for kitap in kitaplar %}
+            <li>
+                <strong>{{ kitap.title }}</strong> - {{ kitap.sayfa_sayisi }} sayfa
+                <a href="{% url 'kitap_duzenle' kitap.pk %}">Düzenle</a> | 
+                <a href="{% url 'kitap_sil' kitap.pk %}">Sil</a>
+            </li>
+        {% empty %}
+            <li>Hiç kitap bulunamadı.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
